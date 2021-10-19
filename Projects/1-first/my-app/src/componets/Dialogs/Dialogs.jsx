@@ -16,7 +16,7 @@ const Dialogs = () => {
                     <NavLink to='/dialogs/Andrey'>Andrey </NavLink>
                 </div>
                 <div className={s.dialog}>
-                    <NavLink to='/dialogs/Roma'>Roma</NavLink>
+                    <NavLink to='/dialogs/Roma'>Roman</NavLink>
                 </div>
                 <div className={s.dialog}>
                     <NavLink to='/dialogs/Sasha'>Sasha</NavLink>
