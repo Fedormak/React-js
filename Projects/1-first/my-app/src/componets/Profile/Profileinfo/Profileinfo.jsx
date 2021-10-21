@@ -1,13 +1,13 @@
 import React from '@testing-library/react';
-import s from'./Profileinfo.module.css'
+import stayle from'./Profileinfo.module.css'
 
 const Profileinfo = () =>{
     return (
         <div>
           <div>
-            <img className={s.img} src='https://klike.net/uploads/posts/2021-04/1618815701_51.jpg' alt='' />
+            <img className={stayle.img} src='https://klike.net/uploads/posts/2021-04/1618815701_51.jpg' alt='' />
           </div>
-          <div className={s.descriptionBlock}>
+          <div className={stayle.descriptionBlock}>
             ava + description
           </div>
 

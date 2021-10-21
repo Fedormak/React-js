@@ -1,24 +1,24 @@
 import React from '@testing-library/react'
 import { NavLink } from 'react-router-dom';
-import s from './Navbar.module.css'
+import stayle from './Navbar.module.css'
 
 const Nav = () => {
     return (
-        <div className={s.nav}>
-            <div className={s.item}>
-                <NavLink to='/pofile' activeClassName={s.activelink}>Profile</NavLink>
+        <div className={stayle.nav}>
+            <div className={stayle.item}>
+                <NavLink to='/pofile' activeClassName={stayle.activelink}>Profile</NavLink>
             </div>
-            <div className={s.item}>
-                <NavLink to='/dialogs' activeClassName={s.activelink}>Message</NavLink>
+            <div className={stayle.item}>
+                <NavLink to='/dialogs' activeClassName={stayle.activelink}>Message</NavLink>
             </div>
-            <div className={`${s.item} ${s.active}`}>
-                <NavLink to='/news' activeClassName={s.activelink}>News</NavLink>
+            <div className={`${stayle.item} ${stayle.active}`}>
+                <NavLink to='/news' activeClassName={stayle.activelink}>News</NavLink>
             </div>
-            <div className={s.item}>
-                <NavLink to='/music' activeClassName={s.activelink}>Music</NavLink>
+            <div className={stayle.item}>
+                <NavLink to='/music' activeClassName={stayle.activelink}>Music</NavLink>
             </div>
-            <div className={s.item}>
-                <NavLink to='/settings' activeClassName={s.activelink}>Settings</NavLink>
+            <div className={stayle.item}>
+                <NavLink to='/settings' activeClassName={stayle.activelink}>Settings</NavLink>
             </div>
         </div>
     );

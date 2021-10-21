@@ -1,22 +1,22 @@
 import React from '@testing-library/react';
-import s from './MyPosts.module.css'
+import stayle from './MyPosts.module.css'
 import Post from './Post/Posts';
 
 const MyPosts = () => {
 
   let posts = [
-    { massage: 'Hi, how are you?', likeCount: 12},
-    { massage: "It's my first post", likeCount: 16},
-    { massage: "it-world", likeCount: 110},
-    { massage: "It's so funny", likeCount: 1},
-    { massage: "It's my friend", likeCount: 10},
+    { message: 'Hi, how are you?', likeCount: 12},
+    { message: "It's my first post", likeCount: 16},
+    { message: "it-world", likeCount: 110},
+    { message: "It's so funny", likeCount: 1},
+    { message: "It's my friend", likeCount: 10},
 ]
 
   let postsElement = posts
-  .map ( p => <Post message={p.massage} like={p.likeCount} />)
+  .map ( p => <Post message={p.message} like={p.likeCount} />)
 
   return (
-    <div className={s.postsBlock}>
+    <div className={stayle.postsBlock}>
       <h3>My posts</h3>
       <div>
         <div>
@@ -27,7 +27,7 @@ const MyPosts = () => {
           <button>Remove</button>
         </div>
       </div>
-      <div className={s.posts}>
+      <div className={stayle.posts}>
           { postsElement }
       </div>
 
