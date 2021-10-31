@@ -4,7 +4,8 @@ import Post from './Post/Posts';
 
 const MyPosts = (props) => {
 
-  let postsElement = props.posts.map( p => <Post messages={p.message} likesCount={p.likeCount} />)
+  let postsElement = 
+      props.posts.map( p => <Post message={p.message} likeCount={p.likeCount} dislikeCount={p.dislikeCount}/>)
 
   return (
     <div className={stayle.postsBlock}>
@@ -15,7 +16,7 @@ const MyPosts = (props) => {
         </div>
         <div>
           <button>Add post</button>
-          <button>Remove</button>y
+          <button>Remove</button>
         </div>
       </div>
       <div className={stayle.posts}>

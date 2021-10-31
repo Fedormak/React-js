@@ -12,10 +12,16 @@
     color: rgba(255, 238, 0, 0.897);
 }
 
-.messeges {
-    padding: 10px;
+.dialogsItems img {
+        height: 50px;
+        width: 50px;
+        border-radius: 30px;
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        -ms-border-radius: 30px;
+        -o-border-radius: 30px;
 }
 
-.messeges .messege {
-
+.messeges {
+    padding: 10px;
 }

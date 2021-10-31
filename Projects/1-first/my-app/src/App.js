@@ -3,7 +3,7 @@ import React from '@testing-library/react'
 import Header from './componets/Header/Haeder'
 import Nav from './componets/Navbar/Navbar'
 import Profile from './componets/Profile/Profile'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import News from './componets/News/news'
 import Music from './componets/Music/music'
 import Settings from './componets/Settings/settings'
@@ -12,10 +12,9 @@ import Dialogs from './componets/Dialogs/Dialogs'
 const App = (props) => {
 
   return (
-    <BrowserRouter>
       <div className='app-wrapper'>
         <Header />
-        <Nav />
+        <Nav state={props.state.Navbar}/>
         <div class='app-wrapper-content'>
           <Route path='/pofile' 
             render= { () => <Profile state={props.state.profilePage}/> }/>
@@ -29,7 +28,6 @@ const App = (props) => {
             render={ () => <Settings />} />
         </div>
       </div>
-    </BrowserRouter>
   );
 }
 

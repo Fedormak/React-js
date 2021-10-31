@@ -7,8 +7,11 @@ const DialogItem = (props) => {
     let path = "/dialogs/" + props.id
 
     return(
-        <div className={stayle.dialog + ' ' + stayle.active}>
-            <NavLink to={path}>{props.name}</NavLink>
+        <div>
+            <div className={stayle.dialog + ' ' + stayle.active}>
+                <img src='https://cs16planet.ru/steam-avatars/images/avatar3219.jpg' alt=''/>
+                <NavLink to={path}>{props.name}</NavLink>
+            </div>
         </div>
     );
 }

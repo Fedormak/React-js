@@ -1,10 +1,15 @@
 import React from '@testing-library/react'
 import { NavLink } from 'react-router-dom';
+import Frends from './frend/frend';
 import stayle from './Navbar.module.css'
 
-const Nav = () => {
+const Nav = (props) => {
+
+    let frendsElement = props.state.frends.map(frends => <Frends name={frends.name}/>)
+
     return (
-        <div className={stayle.nav}>
+    <div className={stayle.nav}>
+        <div>
             <div className={stayle.item}>
                 <NavLink to='/pofile' activeClassName={stayle.activelink}>Profile</NavLink>
             </div>
@@ -21,6 +26,11 @@ const Nav = () => {
                 <NavLink to='/settings' activeClassName={stayle.activelink}>Settings</NavLink>
             </div>
         </div>
+        <div className={stayle.item}>
+                <h3>Frends</h3>
+                {frendsElement}
+        </div>
+    </div>
     );
 }
 

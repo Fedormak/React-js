@@ -1,31 +1,36 @@
 let state = {
-        dialogsPage: {
-            messages: [
-                { message: 'Hello'},
-                { message: 'yo'},
-                { message: 'Andrey hey!!'},
-                { message: 'pin98'},
-                { message: 'password-ldl'},
-                { message: 'name-Lisa'},
-            ],
-    
-            dialogs: [
-                {id: 1, name: 'Sveta'},
-                {id: 2, name: 'Dimych'},
-                {id: 3, name: 'Andrey'},
-                {id: 4, name: 'Roma'},
-                {id: 5, name: 'Sasha'},
-                {id: 6, name: 'Lisa'},
-              ] ,
-        },
-        profilePage: {
-            messages:[
-                { message: 'Hi, how are you?', likeCount: 12},
-                { message: "It's my first post", likeCount: 16},
-                { message: "it-world", likeCount: 110},
-                { message: "It's so funny", likeCount: 1},
-                { message: "It's my friend", likeCount: 10},] 
-        }
+    dialogsPage: {
+        dialogs: [
+            {id: 1, name: 'Dimych'},
+            {id: 2, name: 'Andrew'},
+            {id: 3, name: 'Sveta'},
+            {id: 4, name: 'Sasha'},
+            {id: 5, name: 'Viktor'},
+            {id: 6, name: 'Valera'}
+        ],
+        messages: [
+            {id: 1, message: 'Hi'},
+            {id: 2, message: 'How is your it-kamasutra?'},
+            {id: 3, message: 'Yo'},
+            {id: 4, message: 'Yo'},
+            {id: 5, message: 'Yo'}
+        ]
+    },
+    profilePage: {
+        posts: [
+            {message: 'Hi, how are you?', likeCount: 12, dislikeCount: 4},
+            {message: 'I\'s my first post', likeCount: 11, dislikeCount: 1},
+            {message: 'Blabla', likeCount: 6, dislikeCount: 3},
+            {message: 'Dada', likeCount: 1, dislikeCount: 11}
+        ]
+    },
+    Navbar: {
+        frends: [
+            {name: 'Dimych'},
+            {name: 'Andrew'},
+            {name: 'Sveta'}
+        ]
     }
+}
 
 export default state
