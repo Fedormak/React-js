@@ -1,12 +1,13 @@
 import React from '@testing-library/react';
 import MyPosts from './MyPosts/MyPosts';
+import s from './Profile.module.css'
 import Profileinfo from './Profileinfo/Profileinfo';
 
-const Profile = (props) => {
+const Profile = () => {
   return (
     <div>
       <Profileinfo />
-      <MyPosts posts={props.state.posts}/>
+      <MyPosts />
     </div>
   );
 }
