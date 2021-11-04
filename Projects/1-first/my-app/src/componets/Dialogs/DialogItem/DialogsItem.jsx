@@ -9,7 +9,7 @@ const DialogItem = (props) => {
     return(
         <div>
             <div className={stayle.dialog + ' ' + stayle.active}>
-                <img src='https://cs16planet.ru/steam-avatars/images/avatar3219.jpg' alt=''/>
+                <img src={props.ava} alt=''/>
                 <NavLink to={path}>{props.name}</NavLink>
             </div>
         </div>

@@ -1,6 +1,9 @@
 .item {
     position: static;
-    display: inline;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    padding: 5px;
 }
 
 .item img {

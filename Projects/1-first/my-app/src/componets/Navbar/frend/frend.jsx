@@ -4,7 +4,7 @@ import stayle from "./frend.module.css"
 const Frends = (props) => {
     return (
         <div className={stayle.item}>
-            <img src='' alt=''/>
+            <img src={props.ava} alt=''/>
             {props.name}
         </div>
     );

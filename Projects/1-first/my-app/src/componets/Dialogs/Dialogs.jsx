@@ -5,28 +5,34 @@ import Message from "./Message/Message";
 
 const Dialogs = (props) => {
 
-    let dialogsElements = props.state.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} />)
+    let dialogsElements = props.state.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} ava={dialog.ava}/>)
     let messageElements = props.state.messages.map(message => <Message message={message.message} />)
 
-    let newPostElement = React.createRef();
-    
-    let addPost = () => {
-        let text = newPostElement.current.value;
-        alert(text)
+    let newMessageElement = React.createRef();
+
+    let addMessage = () => {
+        props.addMessage()
+    }
+
+    let onMessageChenge = () => {
+        let text = newMessageElement.current.value;
+        props.updateNewMessagesText (text);
     }
 
     return (
         <div className={stayle.dialogs}>
             <div className={stayle.dialogsItems}>
-                { dialogsElements }
+                {dialogsElements}
             </div>
             <div className={stayle.messages}>
-                { messageElements }
-                
-                    <textarea ref={newPostElement}></textarea>
-                    <div><button onClick={addPost}>add text</button>
+                {messageElements}
+
+                <div>
+                    <textarea onChange={onMessageChenge} ref={newMessageElement} value={props.onMessageChenge} />
+                </div>
+                <div><button onClick={addMessage}>add text</button>
                     <button>Remove</button></div>
-                
+
             </div>
         </div>
     )

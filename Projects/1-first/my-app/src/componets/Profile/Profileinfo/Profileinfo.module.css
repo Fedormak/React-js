@@ -1,6 +1,7 @@
 .img {
     width: auto;
     height: 500px;
+    padding-left: 10px;
 }
 
 .descriptionBlock {

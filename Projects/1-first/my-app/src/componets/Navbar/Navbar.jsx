@@ -5,7 +5,7 @@ import stayle from './Navbar.module.css'
 
 const Nav = (props) => {
 
-    let frendsElement = props.state.frends.map(frends => <Frends name={frends.name}/>)
+    let frendsElement = props.state.frends.map(frends => <Frends name={frends.name} ava={frends.ava}/>)
 
     return (
     <div className={stayle.nav}>
