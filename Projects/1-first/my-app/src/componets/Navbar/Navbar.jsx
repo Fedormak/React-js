@@ -4,8 +4,8 @@ import Frends from './frend/frend';
 import stayle from './Navbar.module.css'
 
 const Nav = (props) => {
-
-    let frendsElement = props.state.frends.map(frends => <Frends name={frends.name} ava={frends.ava}/>)
+    debugger
+    let frendsElement = props.navbar.frends.map(frends => <Frends name={frends.name} ava={frends.ava}/>)
 
     return (
     <div className={stayle.nav}>
