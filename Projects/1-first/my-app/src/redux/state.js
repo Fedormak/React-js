@@ -40,24 +40,31 @@ let store = {
     _callsubscribe() {
         console.log('state change')
     },
+
     getState() {
         return this._state;
     },
+    subscribe(observer) {
+        this._callsubscribe = observer
+    },
+
     addMessage() {
-    let newMessage = {
-        message: this._state.dialogsPage.newMessageText
-    }
-    this._state.dialogsPage.messages.push(newMessage)
-    this._state.dialogsPage.newMessageText = ''
-    this._callsubscribe(this._state)
+    
     },
     updateNewMessages(newText) {
-        this._state.dialogsPage.newMessageText = newText
-        this._callsubscribe(this._state)
+        
     },
     addPost() {
         debugger
-        let newPost = {
+        
+    },
+    updateNewPostText(newText) {
+        debugger
+        
+    },
+    dispatch(action) {
+        if (action.type === 'ADD-POST'){
+            let newPost = {
             id: 5,
             message: this._state.profilePage.newPostText,
             likeCount: 0,
@@ -67,14 +74,24 @@ let store = {
         this._state.profilePage.posts.push(newPost)
         this._state.profilePage.newPostText = ''
         this._callsubscribe(this._state);
-    },
-    updateNewPostText(newText) {
-        debugger
-        this._state.profilePage.newPostText = newText
-        this._callsubscribe(this._state);
-    },
-    subscribe(observer) {
-        this._callsubscribe = observer
+        }
+        else if (action.type === 'APPDATE-NEW-POST-TEXT') {
+            this._state.profilePage.newPostText = action.newText
+                this._callsubscribe(this._state);
+        }
+        else if (action.type === 'ADD-MESSAGE') {
+            let newMessage = {
+                message: this._state.dialogsPage.newMessageText
+        }
+
+        this._state.dialogsPage.messages.push(newMessage)
+        this._state.dialogsPage.newMessageText = ''
+        this._callsubscribe(this._state)
+        }
+        else if (action.type === 'APPDATE-NEW-MESSAGE-TEXT'){
+            this._state.dialogsPage.newMessageText = action.newText
+            this._callsubscribe(this._state)
+        }
     }
 }
 
