@@ -1,6 +1,7 @@
 import React from "react"
 import DialogItem from "./DialogItem/DialogsItem";
 import stayle from './Dialogs.module.css'
+import { updateNewMessageTextActionCreate, addMessageActionCreate } from './../../redux/state'
 import Message from "./Message/Message";
 
 const Dialogs = (props) => {
@@ -11,13 +12,18 @@ const Dialogs = (props) => {
     let newMessageElement = React.createRef()
 
     let addMessege = () => {
-        props.addMessage()
+        // props.addMessege()
+        props.dispatch(addMessageActionCreate())
     }
 
     let onMessegeChenge = () => {
-        let text = newMessageElement.current.value
-        props.updateNewMessages(text)
+        let text = newMessageElement.current.value;
+        // props.appdateNewMessageText()
+        debugger
+        let action = updateNewMessageTextActionCreate(text);
+        props.dispatch(action)
     }
+    debugger
     return (
         <div className={stayle.dialogs}>
             <div className={stayle.dialogsItems}>
@@ -27,7 +33,8 @@ const Dialogs = (props) => {
                 {messageElements}
 
                 <div className={stayle.textarea}>
-                    <textarea onChenge={onMessegeChenge} ref={newMessageElement} value={props.dialogsPage.newMessageText}/>
+                    <textarea onChange={onMessegeChenge} ref={newMessageElement}
+                        value={props.dialogsPage.newMessageText}/>
                 </div>
                 <div>
                     <button onClick={addMessege}>add text</button>
