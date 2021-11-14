@@ -1,5 +1,8 @@
-const Add_POST = 'ADD-POST'
+const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+const SEND_MESSAGES = 'SEND-MESSAGES';
 
 let store = {
     _state: {
@@ -19,8 +22,7 @@ let store = {
             { id: 4, message: 'Yo' },
             { id: 5, message: 'Yo' }
         ],
-        newMessageText: 'WriteText'
-
+        newMessageBody: ''
     },
     profilePage: {
         posts: [
@@ -29,7 +31,7 @@ let store = {
             { id: 3, message: 'Blabla', likeCount: 6, dislikeCount: 3 },
             { id: 4, message: 'Dada', likeCount: 1, dislikeCount: 11 }
         ],
-        newPostText: 'WriteText'
+        newPostText: ''
     },
     Navbar: {
         frends: [
@@ -52,7 +54,7 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === 'ADD-POST'){
+        if (action.type === ADD_POST){
             let newPost = {
             id: 5,
             message: this._state.profilePage.newPostText,
@@ -64,34 +66,35 @@ let store = {
         this._state.profilePage.newPostText = ''
         this._callsubscribe(this._state);
         }
-        else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+        else if (action.type === UPDATE_NEW_POST_TEXT) {
             this._state.profilePage.newPostText = action.newText
             this._callsubscribe(this._state)
         }
-        else if (action.type === 'ADD-MESSAGE') {
-            let newMessage = {
-                message: this._state.dialogsPage.newMessageText
+        else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.dialogsPage.newMessageBody = action.body
+            this._callsubscribe(this._state)
         }
-
-        this._state.dialogsPage.messages.push(newMessage)
-        this._state.dialogsPage.newMessageText = ''
-        this._callsubscribe(this._state)
-        }
-        else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT'){
-            this._state.dialogsPage.newMessageText = action.newMessage
+        else if (action.type === SEND_MESSAGES) {
+            let body = this._state.dialogsPage.newMessageBody
+            this._state.dialogsPage.newMessageBody = ''
+            this._state.dialogsPage.messages.push({            
+                id: 5,
+                message: body,
+                likeCount: 0,
+                dislikeCount: 0})
             this._callsubscribe(this._state)
         }
     }
 }
 
 
-export const addPostActionCreate = () => ({type: Add_POST})
-
+export const addPostActionCreate = () => ({type: ADD_POST})
 export const updateNewPostTextActionCreate = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text})
 
-export const updateNewMessageTextActionCreate= (text) => ({type: 'APPDATE-NEW-MESSAGE-TEXT', newMessage: text})
+export const sendMessageCreate = () => ({type: SEND_MESSAGES})
+export const updateNewMessageBodyCreate = (body) => ({type: UPDATE_NEW_MESSAGE_BODY, body: body})
 
-export const addMessageActionCreate = () => ({ type: 'ADD-MESSAGE' })
+
 
 export default store
 window.store = store;
