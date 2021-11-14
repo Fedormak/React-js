@@ -1,7 +1,7 @@
 import React from "react"
 import DialogItem from "./DialogItem/DialogsItem";
 import stayle from './Dialogs.module.css'
-import { sendMessageCreate, updateNewMessageBodyCreate, } from './../../redux/state'
+import { sendMessageCreate, updateNewMessageBodyCreate, } from './../../redux/dialogs-reducer'
 import Message from "./Message/Message";
 
 const Dialogs = (props) => {
