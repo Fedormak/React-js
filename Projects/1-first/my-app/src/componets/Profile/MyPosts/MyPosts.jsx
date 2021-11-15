@@ -4,7 +4,6 @@ import stayle from './MyPosts.module.css'
 import Post from './Post/Posts';
 
 const MyPosts = (props) => {
-
   let postsElement =
     props.posts.map(p => <Post message={p.message} likeCount={p.likeCount} dislikeCount={p.dislikeCount} />)
 
