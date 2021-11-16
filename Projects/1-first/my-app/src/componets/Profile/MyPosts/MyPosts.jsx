@@ -1,5 +1,4 @@
 import React from 'react';
-import { addPostActionCreate, updateNewPostTextActionCreate } from './../../../redux/profile-reducer';
 import stayle from './MyPosts.module.css'
 import Post from './Post/Posts';
 
@@ -10,17 +9,13 @@ const MyPosts = (props) => {
 
   let newPostText = props.newPostText
 
-  let addPost = () => {
-    // props.addPost
-    props.dispatch(addPostActionCreate())
+  let onAddPost = () => {
+    props.addPost()
   }
 
   let onPostChange = (event) => {
     let text = event.target.value;
-    //props.updateNewPostText
-    // let action = { type: 'UPDATE-NEW-POST-TEXT', newText: text}
-    let action = updateNewPostTextActionCreate(text)
-    props.dispatch(action)
+    props.updateNewPostText(text)
   }
 
   return (
@@ -28,11 +23,11 @@ const MyPosts = (props) => {
       <h3>My posts</h3>
       <div>
         <div>
-          <textarea onChange={onPostChange}
+          <textarea onChange={ onPostChange }
             value={newPostText} placeholder='Enter your message'/>
         </div>
         <div>
-          <button onClick={ addPost }>Add post</button>
+          <button onClick={ onAddPost }>Add post</button>
           <button>Remove</button>
         </div>
       </div>

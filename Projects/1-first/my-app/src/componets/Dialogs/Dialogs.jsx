@@ -1,25 +1,22 @@
 import React from "react"
 import DialogItem from "./DialogItem/DialogsItem";
 import stayle from './Dialogs.module.css'
-import { sendMessageCreate, updateNewMessageBodyCreate, } from './../../redux/dialogs-reducer'
 import Message from "./Message/Message";
 
 const Dialogs = (props) => {
 
-    let state = props.store.getState().dialogsPage
+    let dialogsElements = props.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} ava={dialog.ava} />)
+    let messageElements = props.messages.map(message => <Message message={message.message} />)
 
-    let dialogsElements = state.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} ava={dialog.ava} />)
-    let messageElements = state.messages.map(message => <Message message={message.message} />)
-
-    let newMessageBody = state.newMessageBody
+    let newMessageBody = props.newMessageBody
 
     let onSendMessagesClick = () => {
-        props.store.dispatch(sendMessageCreate())
+        props.onSendMessagesClick()
     }
 
     let onNewMessageCheng = (event) => {
         let body = event.target.value
-        props.store.dispatch(updateNewMessageBodyCreate(body))
+        props.onNewMessageCheng(body)
     }
     return (
         <div className={stayle.dialogs}>
