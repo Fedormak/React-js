@@ -6,7 +6,6 @@ const MyPosts = (props) => {
   let postsElement =
     props.posts.map(p => <Post message={p.message} likeCount={p.likeCount} dislikeCount={p.dislikeCount} />)
 
-
   let newPostText = props.newPostText
 
   let onAddPost = () => {

@@ -14,13 +14,13 @@ const App = (props) => {
   return (
       <div className='app-wrapper'>
         <Header />
-        <Nav navbar={props.state.navbar}/>
+        <Nav />
         <div className='app-wrapper-content'>
           <Route path='/pofile' 
-            render= { () => <Profile store={props.store}/>}/>
+            render= { () => <Profile />}/>
 
           <Route path='/dialogs' 
-            render={ () => <DialogsContainer store={props.store}/>} />
+            render={ () => <DialogsContainer />} />
 
           <Route path='/news' 
             render={ () => <News />} />
