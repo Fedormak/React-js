@@ -1,19 +1,15 @@
 import React from '@testing-library/react'
 import { NavLink } from 'react-router-dom';
-import StoreContext from '../../StoreContext';
 import Frends from './frend/frend';
 import stayle from './Navbar.module.css'
 
 const Nav = (props) => {
     
+    // let state = store.getState().navbar
+    //
+    // let frendsElement = state.frends.map(frends => <Frends name={frends.name} ava={frends.ava}/>)
 
-    return (
-        <StoreContext.Consumer>
-            { (store) => {
-                let state = store.getState().navbar
-
-                let frendsElement = state.frends.map(frends => <Frends name={frends.name} ava={frends.ava}/>)
-                return (
+    return ( 
                 <div className={stayle.nav}>
                     <div>
                         <div className={stayle.item}>
@@ -32,14 +28,13 @@ const Nav = (props) => {
                             <NavLink to='/settings' activeClassName={stayle.activelink}>Settings</NavLink>
                         </div>
                     </div>
-                    <div className={stayle.item}>
+                    {/* <div className={stayle.item}>
                         <h3>Frends</h3>
                         {frendsElement}
-                    </div>
-                </div>)
-            }
-            }
-        </StoreContext.Consumer>
+                    </div> */}
+                </div>
+            
+
     );
 }
 

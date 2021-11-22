@@ -2,7 +2,7 @@ import React from '@testing-library/react';
 import MyPostsContainer from './MyPosts/MyPostsContainer';
 import Profileinfo from './Profileinfo/Profileinfo';
 
-const Profile = (props) => {
+const Profile = () => {
   return (
     <div>
       <Profileinfo />
