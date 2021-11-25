@@ -1,7 +1,7 @@
 import './App.css'
 import React from '@testing-library/react'
 import Header from './componets/Header/Haeder'
-import Nav from './componets/Navbar/Navbar'
+import NavbarContainer from './componets/Navbar/NavbarContainer'
 import Profile from './componets/Profile/Profile'
 import { Route } from 'react-router-dom'
 import News from './componets/News/news'
@@ -14,7 +14,7 @@ const App = (props) => {
   return (
       <div className='app-wrapper'>
         <Header />
-        <Nav />
+        <NavbarContainer />
         <div className='app-wrapper-content'>
           <Route path='/pofile' 
             render= { () => <Profile />}/>

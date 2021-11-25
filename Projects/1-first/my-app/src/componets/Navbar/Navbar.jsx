@@ -4,36 +4,42 @@ import Frends from './frend/frend';
 import stayle from './Navbar.module.css'
 
 const Nav = (props) => {
-    
-    // let state = store.getState().navbar
-    //
-    // let frendsElement = state.frends.map(frends => <Frends name={frends.name} ava={frends.ava}/>)
 
-    return ( 
-                <div className={stayle.nav}>
-                    <div>
-                        <div className={stayle.item}>
-                            <NavLink to='/pofile' activeClassName={stayle.activelink}>Profile</NavLink>
-                        </div>
-                        <div className={stayle.item}>
-                            <NavLink to='/dialogs' activeClassName={stayle.activelink}>Message</NavLink>
-                        </div>
-                        <div className={`${stayle.item} ${stayle.active}`}>
-                            <NavLink to='/news' activeClassName={stayle.activelink}>News</NavLink>
-                        </div>
-                        <div className={stayle.item}>
-                            <NavLink to='/music' activeClassName={stayle.activelink}>Music</NavLink>
-                        </div>
-                        <div className={stayle.item}>
-                            <NavLink to='/settings' activeClassName={stayle.activelink}>Settings</NavLink>
-                        </div>
-                    </div>
-                    {/* <div className={stayle.item}>
+    let state = props.Navbar
+
+    let frendsElement = state.frends.map(frends => <Frends name={frends.name} ava={frends.ava} />)
+
+    return (
+        <div className={stayle.nav}>
+            <div>
+                <div className={stayle.item}>
+                    <NavLink to='/pofile' activeClassName={stayle.activelink}>Profile</NavLink>
+                </div>
+                <div className={stayle.item}>
+                    <NavLink to='/dialogs' activeClassName={stayle.activelink}>Message</NavLink>
+                </div>
+                <div className={`${stayle.item} ${stayle.active}`}>
+                    <NavLink to='/news' activeClassName={stayle.activelink}>News</NavLink>
+                </div>
+                <div className={stayle.item}>
+                    <NavLink to='/music' activeClassName={stayle.activelink}>Music</NavLink>
+                </div>
+                <div className={stayle.item}>
+                    <NavLink to='/finduser' activeClassName={stayle.activelink}>Find user</NavLink>
+                </div>
+                <div className={stayle.item}>
+                    <NavLink to='/settings' activeClassName={stayle.activelink}>Settings</NavLink>
+                </div>
+                <div>
+                    <div className={stayle.item}>
                         <h3>Frends</h3>
                         {frendsElement}
-                    </div> */}
+                    </div>
                 </div>
-            
+
+            </div>
+        </div>
+
 
     );
 }
