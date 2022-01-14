@@ -1,4 +1,3 @@
-import React from '@testing-library/react'
 import { connect } from 'react-redux';
 import Nav from './Navbar';
 

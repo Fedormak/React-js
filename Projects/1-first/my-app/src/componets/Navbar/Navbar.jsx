@@ -25,14 +25,14 @@ const Nav = (props) => {
                     <NavLink to='/music' activeClassName={stayle.activelink}>Music</NavLink>
                 </div>
                 <div className={stayle.item}>
-                    <NavLink to='/finduser' activeClassName={stayle.activelink}>Find user</NavLink>
+                    <NavLink to='/find-users' activeClassName={stayle.activelink}>Find user</NavLink>
                 </div>
                 <div className={stayle.item}>
                     <NavLink to='/settings' activeClassName={stayle.activelink}>Settings</NavLink>
                 </div>
                 <div>
                     <div className={stayle.item}>
-                        <h3>Frends</h3>
+                        <h3>Frends Online</h3>
                         {frendsElement}
                     </div>
                 </div>
