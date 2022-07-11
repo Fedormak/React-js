@@ -1,0 +1,17 @@
+.nav {
+    grid-area: n;
+    background: lightblue;
+    padding: 5px;
+    border-right: 1px solid black;
+}
+
+.item a {
+  color: black;
+  margin: 5px;
+  text-decoration: none;
+  opacity: 0.6
+}
+
+.item a:hover{
+  opacity: 1;
+}

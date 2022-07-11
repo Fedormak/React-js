@@ -1,0 +1,20 @@
+.header {
+    grid-area: h;
+    background: lightblue;
+}
+.skyfall {
+  width: 100px;
+}
+.loginBlock {
+  float: right;
+}
+.loginBlock a {  
+  color: black;
+  margin: 5px;
+  text-decoration: none;
+  opacity: 0.6
+}
+
+.loginBlock a:hover {
+  opacity: 1;
+}

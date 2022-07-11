@@ -1,0 +1,13 @@
+.item {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+}
+
+.item img {
+    height: 45px;
+    width: 45px;
+    background: blue;
+    border-radius: 100%;
+}
